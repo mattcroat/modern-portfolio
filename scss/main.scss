@@ -1,5 +1,81 @@
-$primary-color: #444;
+// Import partials
+@import 'config';
 
+// Reset
+* {
+  box-sizing: border-box;
+}
+
+// Core styling
 body {
+  @include background;
   background: $primary-color;
+  color: #fff;
+  height: 100%; // so you can use vh, vw on the child elements
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', 'Segoe UI', Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+// Headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    font-size: 6rem; // multiplier of browser font-size 16*6 = 96px
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem; // 👈 32px
+    padding: 0.2rem 1rem;
+    background: rbga(lighten($primary-color, 2), 0.5); // wrap in rgba so it's see-through
+  }
+}
+
+// Links
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+// Header
+header {
+  position: fixed; // so our hamburger menu always stays at the top
+  z-index: 2; // stay in front
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+// Main section
+main {
+  padding: 4rem;
+  height: 100%;
+
+  // Icons
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.4rem; // some space between icons
+
+      &:hover {
+        color: $secondary-color;
+        @include easeOut;
+      }
+    }
+  }
+
+  &#home {
+    overflow: hidden; // no scrollbars
+    h1 {
+      margin-top: 20vh; // push it 20% from the top of the screen
+    }
+  }
 }
