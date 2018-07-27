@@ -39,7 +39,7 @@
     overflow: hidden; }
   .menu-nav {
     margin: 0;
-    paddng: 0;
+    padding: 0;
     background: #373737;
     list-style: none;
     transform: translate3d(0, -100%, 0);
