@@ -287,3 +287,59 @@ cursor: pointer;
   }
 }
 ```
+
+## Media query mixins
+---
+###_config.sass
+```sass
+@mixin mediaSm {
+  // Anything below 500px
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  // Anything below 768px
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  // Anything between 760px and 1170px
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin mediaXL {
+  // Anything above 1171px
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
+}
+```
+
+### _mobile.sass
+```sass
+// Wide
+@include mediaXl {
+  // ...
+}
+
+// Large
+@include mediaLg {
+  // ...
+}
+
+// Medium
+@include mediaMd {
+  // ...
+}
+
+// Small
+@include mediaSm {
+  // ...
+}
+```
