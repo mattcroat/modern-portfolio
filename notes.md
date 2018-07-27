@@ -183,3 +183,61 @@ Pseudo element overlay
   }
 }
 ```
+
+Change cursor
+```sass
+cursor: pointer;
+```
+
+## Rotate menu into x
+---
+### index.html
+```html
+<!-- Hamburger menu -->
+<div class="menu-btn">
+  <div class="btn-line"></div>
+  <div class="btn-line"></div>
+  <div class="btn-line"></div>
+</div>
+```
+
+### _menu.scss
+```scss
+// Menu button
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  top: 35px;
+  right: 35px;
+  cursor: pointer;
+  @include easeOut;
+
+  .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0; // space in-between
+    background: #fff;
+    @include easeOut;
+  }
+
+  // Rotate into x with menu lines
+  &.close {
+    transform: rotate(180deg);
+
+    .btn-line {
+      // Line 1 rotate
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      // Line 2 hide
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      // Line 3 rotate
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    }
+  }
+}
+```
