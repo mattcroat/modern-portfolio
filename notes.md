@@ -110,6 +110,11 @@ Sass lighten
 background: lighten($primary-color, 2);
 ```
 
+Sass darken
+```sass
+background: lighten($primary-color, 2);
+```
+
 Simple animation
 ```sass
 &:hover {
@@ -238,6 +243,47 @@ cursor: pointer;
         transform: rotate(-45deg) translate(7px, -6px);
       }
     }
+  }
+}
+```
+
+## Animate a element appearing from the top using translate3d
+
+```sass
+&-nav {
+  margin: 0;
+  paddng: 0;
+  background: darken($primary-color, 5);
+  list-style: none;
+  transform: translate3d(0, -100%, 0); // now it's off the page
+  @include easeOut;
+  
+  // Only transition when it has class of show
+  &.show {
+    // Slide in from top
+    transform: translate3d(0, 0 ,0);
+  }
+}
+```
+
+## Sass for loop to delay nav item slide
+
+```sass
+.nav-item {
+  transform: translate3d(600px, 0, 0); // move it right
+  @include easeOut;
+
+  // Only transition when it has class of show
+  &.show {
+    // Slide in from right
+    transform: translate3d(0, 0 ,0);
+  }
+}
+
+// Delay each nav item slide by 0.1s
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s // so each item comes in seperately
   }
 }
 ```
