@@ -1,7 +1,4 @@
-# Modern Portfolio
----
-
-## Setting up Sass
+# Setting up Sass
 
 Init package.json
 ```shell
@@ -36,7 +33,7 @@ Run the script
 npm run sass
 ```
 
-## Initialize repo
+# Initialize repo
 
 Git ignore
 ```shell
@@ -58,7 +55,7 @@ Commit
 git commit -m "Initial commit"
 ```
 
-## HTML5 Semantic Tags
+# HTML5 Semantic Tags
 
 ```html
 <header>
@@ -69,19 +66,21 @@ git commit -m "Initial commit"
 <footer>
 ```
 
-## Sass
+# Sass
 
-Sass partials
-Every file that starts with a underscore is a Sass partial.
-`scss/_config.sass`
+## Sass partials
 
-Importing partials
-```sass
+Every file that starts with a underscore is a Sass partial:
+
+`> scss/_config.sass`
+
+## Importing partials
+```scss
 @import 'config';
 ```
 
-CSS reset
-```sass
+## CSS reset
+```scss
 * {
   margin: 0;
   padding: 0;
@@ -89,13 +88,13 @@ CSS reset
 }
 ```
 
-Sass variable
-```sass
+## Sass variable
+```scss
 $primary-color: #444;
 ```
 
-Sass nesting
-```sass
+## Sass nesting
+```scss
 h1,
 h2,
 h3 {
@@ -106,28 +105,28 @@ h3 {
     font-size: 6rem;
   }
 }
-```sass
+```
 
-Sass lighten
-```sass
+## Sass lighten
+```scss
 background: lighten($primary-color, 2);
 ```
 
-Sass darken
-```sass
-background: lighten($primary-color, 2);
+## Sass darken
+```scss
+background: darken($primary-color, 2);
 ```
 
-Simple animation
-```sass
+## Simple animation
+```scss
 &:hover {
   color: $secondary-color;
   transition: all 1.5s ease-out; // everything transitionable, time, motion
 }
 ```
 
-Sass mixin
-```sass
+## Sass mixin
+```scss
 @mixin easeOut {
   transition: all 0.5s ease-out; // everything transitionable, time, motion
 }
@@ -166,8 +165,8 @@ body {
 }
 ```
 
-Pseudo element overlay
-```sass
+## Pseudo element overlay
+```scss
 @mixin background {
   // Check if image is enabled
   @if $show-home-image {
@@ -192,13 +191,13 @@ Pseudo element overlay
 }
 ```
 
-Change cursor
-```sass
+## Change cursor
+```scss
 cursor: pointer;
 ```
 
-## Rotate menu into x
----
+# Rotate menu into x
+
 ### index.html
 ```html
 <!-- Hamburger menu -->
@@ -250,9 +249,9 @@ cursor: pointer;
 }
 ```
 
-## Animate a element appearing from the top
+# Animate a element appearing from the top
 
-```sass
+```scss
 &-nav {
   margin: 0;
   paddng: 0;
@@ -269,9 +268,9 @@ cursor: pointer;
 }
 ```
 
-## Sass for loop to delay nav item slide
+# Sass for loop to delay nav item slide
 
-```sass
+```scss
 .nav-item {
   transform: translate3d(600px, 0, 0); // move it right
   @include easeOut;
@@ -291,10 +290,10 @@ cursor: pointer;
 }
 ```
 
-## Media query mixins
----
-###_config.sass
-```sass
+# Media query mixins
+
+### _config.sass
+```scss
 @mixin mediaSm {
   // Anything below 500px
   @media screen and (max-width: 500px) {
@@ -325,7 +324,7 @@ cursor: pointer;
 ```
 
 ### _mobile.sass
-```sass
+```scss
 // Wide
 @include mediaXl {
   // ...
@@ -347,10 +346,10 @@ cursor: pointer;
 }
 ```
 
-## Set text color based on primary color
----
+# Set text color based on primary color
+
 ### _config.scss
-```sass
+```scss
 // Set text color
 @function set-text-color($color) {
   @if (lightness($color) > 40) {
@@ -404,10 +403,10 @@ body {
 }
 ```
 
-## Template areas grid
----
+# Template areas grid
+
 ### main.scss
-```sass
+```scss
 // About
 .about-info {
   display: grid;
@@ -447,7 +446,7 @@ body {
 }
 ```
 
-## Sticky footer
+# Sticky footer
 
 On the element before it
 ```scss
@@ -456,14 +455,16 @@ main {
 }
 ```
 
+Footer
 ```scss
 #main-footer {
   height: 60px;
 }
 ```
 
-## Extending a class in Sass
-```sass
+# Extending a class in Sass
+
+```scss
 // Button styles
 .btn {
   display: block;
@@ -489,7 +490,7 @@ main {
 }
 ```
 
-## Deploy static page to GitHub
+# Deploy static page to GitHub
 
 Install GitHub pages
 ```shell
