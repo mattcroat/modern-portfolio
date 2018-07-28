@@ -488,3 +488,36 @@ main {
   color: #333;
 }
 ```
+
+## Deploy static page to GitHub
+
+Install GitHub pages
+```shell
+npm i gh-pages
+```
+
+Modify package.json
+```json
+{
+  "name": "modern-portfolio",
+  "version": "1.0.0",
+  "description": "Responsive portfolio website",
+  "main": "index.js",
+  "homepage": "https://mattcroat.github.io/modern-portfolio",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "mattcroat",
+  "license": "MIT",
+  "dependencies": {
+    "gh-pages": "^1.2.0",
+    "node-sass": "^4.9.2"
+  }
+}
+```
+
+Deploy
+```shell
+npm run deploy
+```
