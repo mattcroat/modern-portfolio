@@ -27,7 +27,7 @@
     min-height: 0;
 
     &.show {
-      transform: translate3d(0, 0, 0); // come into viem
+      transform: translate3d(0, 0, 0); // come into view
     }
   }
 
@@ -46,6 +46,16 @@
       width: 150px;
       height: 150px;
     }
+  }
+
+  .about-info {
+    grid-template-areas:
+    'bioimage'
+    'bio'
+    'job1'
+    'job2'
+    'job3';
+    grid-template-columns: 1fr;
   }
 }
 

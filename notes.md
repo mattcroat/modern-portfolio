@@ -38,7 +38,7 @@ npm run sass
 
 ## Initialize repo
 
-Create ignore list
+Git ignore
 ```shell
 touch .gitignore
 ```
@@ -62,7 +62,10 @@ git commit -m "Initial commit"
 
 ```html
 <header>
+<nav>
 <main>
+<section>
+<article>
 <footer>
 ```
 
@@ -247,7 +250,7 @@ cursor: pointer;
 }
 ```
 
-## Animate a element appearing from the top using translate3d
+## Animate a element appearing from the top
 
 ```sass
 &-nav {
@@ -341,5 +344,120 @@ cursor: pointer;
 // Small
 @include mediaSm {
   // ...
+}
+```
+
+## Set text color based on primary color
+---
+### _config.scss
+```sass
+// Set text color
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+```
+
+### main.scss
+```scss
+body {
+  @include background;
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  height: 100%; // so you can use vh, vw on the child elements
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', 'Segoe UI', Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+```
+
+### _menu.scss
+```scss
+.btn-line {
+  width: 28px;
+  height: 3px;
+  margin: 0 0 5px 0; // space in-between
+  background: set-text-color($primary-color);
+  @include easeOut;
+}
+```
+
+```scss
+.nav-link {
+  display: inline-block;
+  position: relative;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  font-weight: 300;
+  color: set-text-color($primary-color);
+  text-decoration: none;
+  @include easeOut;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+```
+
+## Template areas grid
+---
+### main.scss
+```sass
+// About
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+   'bioimage bio bio'
+   'job1 job2 job3';
+  grid-template-columns: repeat(3, 1fr);
+
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+  }
+  
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+  
+  .job-1 {
+    grid-area: job1;
+  }
+  .job-2 {
+    grid-area: job2;
+  }
+  .job-3 {
+    grid-area: job3;
+  }
+  
+  .job {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+  }
+}
+```
+
+## Sticky footer
+
+On the element before it
+```scss
+main {
+  min-height: calc(100vh - 60px); // sticky footer
+}
+```
+
+```scss
+#main-footer {
+  height: 60px;
 }
 ```
