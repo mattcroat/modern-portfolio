@@ -33,7 +33,7 @@ Run the script
 npm run sass
 ```
 
-# Initialize repo
+# Initialize Repo
 
 Git ignore
 ```shell
@@ -249,7 +249,7 @@ cursor: pointer;
 }
 ```
 
-# Animate a element appearing from the top
+# Animate Element Appearing From Top
 
 ```scss
 &-nav {
@@ -268,7 +268,7 @@ cursor: pointer;
 }
 ```
 
-# Sass for loop to delay nav item slide
+# Sass for Loop to Delay Animation
 
 ```scss
 .nav-item {
@@ -290,7 +290,7 @@ cursor: pointer;
 }
 ```
 
-# Media query mixins
+# Media Query Mixins
 
 ### _config.sass
 ```scss
@@ -346,7 +346,7 @@ cursor: pointer;
 }
 ```
 
-# Set text color based on primary color
+# Set Text Color Based on Primary Color
 
 ### _config.scss
 ```scss
@@ -403,7 +403,7 @@ body {
 }
 ```
 
-# Template areas grid
+# Template Areas Grid
 
 ### main.scss
 ```scss
@@ -446,7 +446,7 @@ body {
 }
 ```
 
-# Sticky footer
+# Sticky Footer
 
 On the element before it
 ```scss
@@ -462,7 +462,7 @@ Footer
 }
 ```
 
-# Extending a class in Sass
+# Extending a Class in Sass
 
 ```scss
 // Button styles
@@ -490,7 +490,7 @@ Footer
 }
 ```
 
-# Deploy static page to GitHub
+# Deploy Static Page to GitHub
 
 Install GitHub pages
 ```shell
