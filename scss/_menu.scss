@@ -52,8 +52,8 @@
   &-nav {
     display: flex;
     flex-flow: column wrap;
-    align-items: center; // align it horizontally
-    justify-content: center; // align it vertically
+    align-items: center; // align horizontally
+    justify-content: center; // align vertically
     float: left;
     width: 50%; // we want each side to take 50%
     height: 100vh; // take up entire size
